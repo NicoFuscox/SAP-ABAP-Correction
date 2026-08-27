@@ -23,9 +23,9 @@ FUNCTION z_bup_flvn00_zgiva_get_data.
 
   CHECK iv_partner IS NOT INITIAL.
 
-  SELECT SINGLE *
+  SELECT SINGLE z1 z2 z3
     FROM zgiva
-    INTO es_zgiva
+    INTO (es_zgiva-z1, es_zgiva-z2, es_zgiva-z3)
     WHERE partner = iv_partner.
 
   IF sy-subrc = 0.
