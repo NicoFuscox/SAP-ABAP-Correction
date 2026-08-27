@@ -1,0 +1,50 @@
+*&---------------------------------------------------------------------*
+*&  Schermo 0100 (subscreen) - Function group ZBUP_FLVN00_ZGIVA
+*&  Folder "Z1/Z2/Z3" nei Dati Generali del ruolo partner FLVN00
+*&---------------------------------------------------------------------*
+*&
+*& Questo file documenta la Flow Logic e il layout dello schermo 0100.
+*& La Flow Logic (sezione 1) e' testo ABAP a tutti gli effetti e va
+*& incollata cosi' com'e' in SE51. Il layout (sezione 2) descrive gli
+*& elementi da posizionare con lo Screen Painter grafico: non essendo
+*& rappresentabile come sorgente testuale, va ricreato manualmente in
+*& SE51 seguendo le indicazioni riportate.
+*&
+*&---------------------------------------------------------------------*
+*& 1) FLOW LOGIC (da inserire in SE51 per lo schermo 0100)
+*&---------------------------------------------------------------------*
+*
+* PROCESS BEFORE OUTPUT.
+*   MODULE status_0100.
+*   MODULE get_data_0100.
+*
+* PROCESS AFTER INPUT.
+*   MODULE user_command_0100.
+*
+*&---------------------------------------------------------------------*
+*& 2) LAYOUT (da realizzare in SE51 - Screen Painter grafico)
+*&---------------------------------------------------------------------*
+*
+* Attributi schermo:
+*   Numero schermo ..... 0100
+*   Tipo schermo ....... Subscreen
+*   Nessun GUI status / titolo proprio (ereditati dalla transazione BP)
+*
+* Campi da posizionare (in un unico gruppo, es. un solo riquadro):
+*
+*   Campo dizionario     Riferimento a dizionario   Attributi
+*   ------------------   ------------------------   ----------------------------------
+*   GS_ZGIVA-Z1          ZGIVA-Z1                   Input: disattivato (solo output)
+*   GS_ZGIVA-Z2          ZGIVA-Z2                   Input: disattivato (solo output)
+*   GS_ZGIVA-Z3          ZGIVA-Z3                   Input: disattivato (solo output)
+*
+*   Per ogni campo aggiungere l'etichetta (Label) associata, generabile
+*   automaticamente dal Dictionary tramite "Trascina campi da dizionario"
+*   in Screen Painter (usa il testo campo/etichetta definito su ZGIVA).
+*
+*   In alternativa ai singoli campi, i tre campi possono essere inclusi
+*   come "Table Control"/gruppo semplice se in futuro si prevede di
+*   mostrare piu' righe; per il requisito attuale (un solo record per
+*   partner) sono sufficienti tre campi singoli.
+*
+*&---------------------------------------------------------------------*
